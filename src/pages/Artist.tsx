@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {WobbleCard} from "@/components/ui/wobble-card";
 import {Card, Carousel} from "@/components/ui/apple-cards-carousel";
@@ -10,6 +11,7 @@ import {
 import {FloatingDock} from "@/components/ui/floating-dock";
 import {AnimatedTestimonials} from "@/components/ui/animated-personels";
 import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
+import React from "react";
 
 export default function ArtistPage() {
 
@@ -51,7 +53,6 @@ export default function ArtistPage() {
         </div>
       </WobbleCard>
 
-
       <div className="w-full h-full py-20">
         <h2
           className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
@@ -60,31 +61,12 @@ export default function ArtistPage() {
         <Carousel items={cards}/>
       </div>
 
-
-      <div className="flex items-center justify-end h-[35rem] w-full">
-        <FloatingDock
-          mobileClassName="translate-y-20"
-          items={links}
-        />
-      </div>
-      {/*<div className="relative w-full h-[35rem]">*/}
-      {/*  /!* Floating Dock *!/*/}
-      {/*  <div*/}
-      {/*    className="fixed top-1/2 right-4 -translate-y-1/2 flex flex-col space-y-4 bg-gray-800 p-4 rounded-lg shadow-lg">*/}
-      {/*    {links.map((link, index) => (*/}
-      {/*      <a*/}
-      {/*        key={index}*/}
-      {/*        href={link.href}*/}
-      {/*        className="w-10 h-10 flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white rounded-full transition"*/}
-      {/*      >*/}
-      {/*        {link.icon} /!* Replace with actual icon or content *!/*/}
-      {/*      </a>*/}
-      {/*    ))}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-
+      <h4
+        className="max-w-7xl pl-4 mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+        On Tour
+      </h4>
       <div
-        className="rounded-md flex dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        className="rounded-md flex dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
           items={testimonialsCard}
           direction="right"
@@ -94,6 +76,13 @@ export default function ArtistPage() {
 
       <div className="flex items-center w-full pb-20">
         <AnimatedTestimonials testimonials={testimonials}/>
+      </div>
+
+      <div className="flex items-center justify-end pt-10 w-full">
+        <FloatingDock
+          mobileClassName="translate-y-20"
+          items={links}
+        />
       </div>
 
     </div>
@@ -109,7 +98,7 @@ const DummyContent = () => {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
                 The first rule of Apple club is that you boast about Apple club.
               </span>{" "}
@@ -263,7 +252,7 @@ const links = [
 const testimonials = [
   {
     quote:
-      "Christopher Anthony John Martin was born on 2 March 1977 in Exeter, Devon, England. He is the eldest of five children. His father, Anthony John Martin, is a retired chartered accountant.",
+      "Christopher Anthony John Martin was born on 2 March 1977 in Exeter, Devon, England. He is the eldest of five children. His father, Anthony John Martin, is a retired chartered accountant. His mother, Alison Martin, is from Rhodesia (modern day Zimbabwe) and works as a music teacher.",
     name: "Chris Martin",
     designation: "Vocalist",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ChrisMartinManch030623_%28cropped%29.jpg/800px-ChrisMartinManch030623_%28cropped%29.jpg",
