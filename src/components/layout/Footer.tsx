@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-dark-100 text-white py-6">
+    <footer className="bg-dark-100 text-white py-6 bottom-0">
 
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
 
@@ -86,15 +86,11 @@ const Footer = () => {
           </ul>
 
           <div className="mt-4 text-sm">
-            © Coldplay. Site by <a href="https://rabbithole.co.uk" className="hover:text-pink-500">Aldohc</a>
+            © Coldplay. Site by <a href="https://www.instagram.com/aldohc_" className="hover:text-pink-500">Aldohc</a>
           </div>
         </div>
       </div>
     </footer>
-
-    // <div className="flex flex-col w-full">
-    //   <h1>Footer</h1>
-    // </div>
   )
 }
 

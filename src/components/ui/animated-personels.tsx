@@ -82,8 +82,8 @@ export const AnimatedTestimonials = ({
                   <Image
                     src={testimonial.src}
                     alt={testimonial.name}
-                    width={400}
-                    height={300}
+                    width={1000}
+                    height={1000}
                     draggable={false}
                     className=" w-full rounded-3xl object-cover object-center"
                   />

@@ -1,10 +1,7 @@
 import ArtistPage from "@/pages/Artist";
-import {Suspense} from "react";
 
-export default function Artist() {
-  return (
-    <Suspense>
+const Artist = () => (
     <ArtistPage/>
-    </Suspense>
-  )
-}
+)
+
+export default Artist;

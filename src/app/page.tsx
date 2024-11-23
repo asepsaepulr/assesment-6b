@@ -1,11 +1,10 @@
-import AlbumPage from "@/pages/Album";
 import React from "react";
+import ArtistPage from "@/pages/Artist";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <>
-      <AlbumPage/>
-    </>
-
+    <aside className="min-h-screen w-full">
+      <ArtistPage/>
+    </aside>
   );
 }
