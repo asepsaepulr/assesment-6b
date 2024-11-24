@@ -1,6 +1,7 @@
 import {formatMSS} from "@/utils/formatDuration";
 import {Track} from "@/types/types";
 import {IconClock, IconSend} from "@tabler/icons-react";
+import {usePlayer} from "@/context/PlayerContext";
 
 interface IProps {
   tracks: Track[];
@@ -15,8 +16,11 @@ export default function TracksTable({
   tracks,
 }: IProps) {
 
+  const { setCurrentTrack } = usePlayer();
+
   const playTrack = (track: Track) => {
     if (track.preview_url) {
+      setCurrentTrack(track);
     }
   };
 
@@ -61,12 +65,9 @@ export default function TracksTable({
             }`}
             key={track.id + index}
           >
-            {/* Track Number */}
             <div className="col-span-1 text-center font-bold text-gray-100">
               {index + 1}
             </div>
-
-            {/* Track Title and Artists */}
             <div className="col-span-9">
               <h2
                 className={`font-medium text-lg ${
@@ -91,13 +92,9 @@ export default function TracksTable({
                   ))}
                 </div>
             </div>
-
-            {/* Track Duration */}
             <div className="col-span-1 text-center text-gray-200">
               {formatMSS(track.duration_ms)}
             </div>
-
-            {/* Share Icon */}
             <div className="col-span-1 text-right text-gray-200">
               <IconSend
                 className="hover:text-white hover:scale-110 transition-transform"
