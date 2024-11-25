@@ -6,7 +6,7 @@ import { signOut } from 'next-auth/react';
 
 const LogoutButton = () => {
   const handeLogout = () => {
-    signOut({ callbackUrl: "http://localhost:3000/login" });
+    signOut({ callbackUrl: "/login" });
   };
   return (
     <DropdownMenuItem onClick={handeLogout}>Logout</DropdownMenuItem>
