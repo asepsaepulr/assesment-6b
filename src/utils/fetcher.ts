@@ -1,4 +1,4 @@
-import {signInWithSpotify} from "@/app/actions";
+import {signIn} from "next-auth/react";
 
 export const fetcher = async (url: string, accessToken: string) => {
   const response = await fetch(url, {
@@ -7,12 +7,11 @@ export const fetcher = async (url: string, accessToken: string) => {
     },
   });
   if (response.status === 401) {
-    return signInWithSpotify();
+    return signIn("spotify", { callbackUrl: "http://localhost:3000" });
   }
   if (!response.ok) {
 
     throw new Error(`Failed to fetch data: ${response.statusText}`);
-
   }
 
   return response.json();

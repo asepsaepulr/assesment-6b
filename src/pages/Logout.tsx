@@ -2,11 +2,14 @@
 
 import React from 'react'
 import {DropdownMenuItem} from "@/components/ui/dropdown-menu";
-import { signout } from '@/app/actions'
+import { signOut } from 'next-auth/react';
 
 const Logout = () => {
+  const hangeLogout = () => {
+    signOut({ callbackUrl: "http://localhost:3000/login" });
+  };
   return (
-  <DropdownMenuItem onClick={() => signout()}>Logout</DropdownMenuItem>
+  <DropdownMenuItem onClick={hangeLogout}>Logout</DropdownMenuItem>
   )
 }
 

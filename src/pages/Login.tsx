@@ -1,20 +1,16 @@
 "use client";
 
 import {Button} from "@/components/ui/button";
-import {signInWithSpotify} from "@/app/actions";
-import Link from "next/link";
+import {signIn} from "next-auth/react";
 
 export default function Login() {
-
+  const handleLogin = () => {
+    signIn("spotify", { callbackUrl: "http://localhost:3000" });
+  };
   return (
     <div>
-      <Button onClick={(e) => {
-        e.preventDefault();
-        signInWithSpotify();
-      }}
-              className="w-full"
-      >
-        <Link href={`/login`}>Sign in</Link>
+      <Button onClick={handleLogin} className="w-full">
+        Sign in
       </Button>
     </div>
   );
