@@ -1,8 +1,9 @@
+"use client";
+
 import {FloatingNav} from "@/components/ui/navbar-menu";
 import {IconHome, IconMessage, IconUser} from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import {auth} from "@/lib/auth";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,9 +15,10 @@ import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import Login from "@/pages/Login";
 import Logout from "@/pages/Logout";
+import {useSession} from "next-auth/react";
 
-const NavbarMenu = async () => {
-  const session = await auth();
+const NavbarMenu = () => {
+  const { data: session } = useSession();
   const user = session?.user;
 
   const navItems = [
@@ -52,7 +54,7 @@ const NavbarMenu = async () => {
           <nav className="flex gap-6 text-2sm md:text-5sm font-semibold text-neutral-700 dark:text-white">
             <Link href="/" className="hover:text-blue-500">Home</Link>
             <Link href="/artist" className="hover:text-pink-500">Artist</Link>
-            <Link href="/album/5SGtrmYbIo0Dsg4kJ4qjM6" className="hover:text-orange-500">Album</Link>
+            <Link href="/album" className="hover:text-orange-500">Album</Link>
           </nav>
         </div>
         <div className="flex justify-center ">

@@ -1,12 +1,16 @@
 import AlbumPage from "@/pages/Album";
 import type {Metadata} from "next";
+import { use } from 'react';
 
 export const metadata: Metadata = {
   title: "Album Coldplay",
 };
 
-const Album = ({params: {albumId}}: { params: { albumId: string } }) => (
-  <AlbumPage albumId={albumId}/>
-);
+type PageProps = Promise<{ albumId: string }>
 
-export default Album;
+export default function Album(props: { params: PageProps }) {
+  const params = use(props.params);
+  return(
+  <AlbumPage albumId={params.albumId}/>
+  )
+};

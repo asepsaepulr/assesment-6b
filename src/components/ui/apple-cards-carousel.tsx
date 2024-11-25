@@ -20,7 +20,7 @@ import {formatYear} from "@/utils/formatDateYear";
 import {useRouter} from "next/navigation";
 
 interface CarouselProps {
-  items: Album[];
+  items: JSX.Element[];
   initialScroll?: number;
 }
 

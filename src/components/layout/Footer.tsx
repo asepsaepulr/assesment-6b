@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <footer className="bg-dark-100 text-white py-6 bottom-0">
@@ -6,7 +8,7 @@ const Footer = () => {
 
         <div className="flex space-x-6">
           <a href="https://www.oxfam.org.uk/" target="_blank" className="hover:opacity-80 transition-opacity">
-            <img
+            <Image
               src="https://www.coldplay.com/wp/wp-content/uploads/2024/06/Group-1076-1.svg"
               width="20"
               height="15"
@@ -16,7 +18,7 @@ const Footer = () => {
             />
           </a>
           <a href="https://www.globalcitizen.org/en/" target="_blank" className="hover:opacity-80 transition-opacity">
-            <img
+            <Image
               src="https://www.coldplay.com/wp/wp-content/uploads/2024/06/Group-1077.svg"
               width="20"
               height="15"
@@ -26,7 +28,7 @@ const Footer = () => {
             />
           </a>
           <a href="http://facebook.com/clientearth" target="_blank" className="hover:opacity-80 transition-opacity">
-            <img
+            <Image
               src="https://www.coldplay.com/wp/wp-content/uploads/2024/06/Group-1078.svg"
               width="20"
               height="12"

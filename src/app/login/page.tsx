@@ -1,5 +1,7 @@
-export default function LoginPage() {
-  return (
-    <h1>Login</h1>
-  )
-}
+import Login from "@/pages/Login";
+
+const LoginPage = () => (
+    <Login/>
+);
+
+export default LoginPage;
