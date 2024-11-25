@@ -12,12 +12,12 @@ export default function Login() {
           Welcome
         </LinkPreview>{" "}
         this is the coldplay website explore{" "}
-        <LinkPreview url="https://raw.githubusercontent.com/asepsaepulr/assesment-6b/refs/heads/main/public/landing.png" className="font-bold text-4xl">
+        <LinkPreview url="https://raw.githubusercontent.com/asepsaepulr/assesment-6b/refs/heads/main/public/information.png" className="font-bold text-4xl">
           Information
         </LinkPreview>{" "}
         about us search listen to our latest albums and{" "}
         <LinkPreview
-          url="https://raw.githubusercontent.com/asepsaepulr/assesment-6b/refs/heads/main/public/landing.png"
+          url="https://raw.githubusercontent.com/asepsaepulr/assesment-6b/refs/heads/main/public/songs.png"
           className="font-bold text-4xl"
         >
           Songs
