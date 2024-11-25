@@ -74,7 +74,7 @@ export default function AlbumPage({ albumId }: { albumId: string }) {
           <input
             type="text"
             placeholder="email@domain.com"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700"
+            className="rounded-lg border p-6 border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full h-11 relative z-10 mt-4 bg-neutral-950 placeholder:text-neutral-700"
           />
         </div>
       </div>

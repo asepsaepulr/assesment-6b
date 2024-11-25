@@ -11,6 +11,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET as string,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({token, account}) {
       if (account) {
@@ -28,6 +29,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     },
   },
   pages: {
-    signIn: "/artist",
+    signIn: "/login",
   },
 });

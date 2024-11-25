@@ -13,9 +13,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import Login from "@/features/Login";
-import Logout from "@/features/Logout";
 import {useSession} from "next-auth/react";
+import LogoutButton from "@/features/components/LogoutButton";
+import LoginButton from "@/features/components/LoginButton";
 
 const NavbarMenu = () => {
   const { data: session } = useSession();
@@ -85,11 +85,11 @@ const NavbarMenu = () => {
                 <DropdownMenuLabel>{user?.name || user?.email}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuSeparator />
-                <Logout/>
+                <LogoutButton/>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-          <Login/>
+          <LoginButton/>
           )}
           <Image
             src="https://eustore.coldplay.com/cdn/shop/t/43/assets/NEW-MOON1.png?v=57993414851097429461723118759"

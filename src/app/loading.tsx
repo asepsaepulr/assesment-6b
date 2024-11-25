@@ -9,7 +9,6 @@ const Loading = () => {
         <Image
           src="https://www.coldplay.com/wp/wp-content/uploads/2024/06/CP_HEART.gif"
           alt="Loading"
-          className="w-40 h-40"
           width={40}
           height={40}
         />

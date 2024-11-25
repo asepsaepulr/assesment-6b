@@ -13,6 +13,7 @@ import {Card, Carousel} from "@/components/ui/apple-cards-carousel";
 import Hero from "@/features/components/Hero";
 import {linkMedia, listTour, personnels} from "@/constants/dummyContent";
 import Loading from "@/app/loading";
+import {redirect} from "next/navigation";
 
 export default function ArtistPage() {
   const {data: session} = useSession();
@@ -30,7 +31,11 @@ export default function ArtistPage() {
     (url: string) => fetcher(url, accessToken as string)
   );
 
-  if (!session || !artistData || !artistAlbum) {
+  if (!session) {
+    redirect("/login");
+  }
+
+  if (!artistData || !artistAlbum) {
     return <div><Loading/></div>;
   }
 
