@@ -10,7 +10,7 @@ import {buildSpotifyApiUrl} from "@/utils/spotifyApi";
 import {fetcher} from "@/utils/fetcher";
 import {useSession} from "next-auth/react";
 import {Card, Carousel} from "@/components/ui/apple-cards-carousel";
-import Hero from "@/pages/components/Hero";
+import Hero from "@/features/components/Hero";
 import {linkMedia, listTour, personnels} from "@/constants/dummyContent";
 import Loading from "@/app/loading";
 

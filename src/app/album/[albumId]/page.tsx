@@ -1,4 +1,4 @@
-import AlbumPage from "@/pages/Album";
+import AlbumPage from "@/features/Album";
 import type {Metadata} from "next";
 import { use } from 'react';
 

@@ -8,9 +8,9 @@ import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
 import {buildSpotifyApiUrl} from "@/utils/spotifyApi";
 import {fetcher} from "@/utils/fetcher";
 import {useSession} from "next-auth/react";
-import TracksTable from "@/pages/components/TracksTable";
-import HeroAlbum from "@/pages/components/HeroAlbum";
-import OtherRelease from "@/pages/components/OtherRelease";
+import TracksTable from "@/features/components/TracksTable";
+import HeroAlbum from "@/features/components/HeroAlbum";
+import OtherRelease from "@/features/components/OtherRelease";
 import {FloatingDock} from "@/components/ui/floating-dock";
 import Loading from "@/app/loading";
 

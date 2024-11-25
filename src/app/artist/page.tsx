@@ -1,4 +1,4 @@
-import ArtistPage from "@/pages/Artist";
+import ArtistPage from "@/features/Artist";
 
 const Artist = () => (
     <ArtistPage/>

@@ -3,7 +3,7 @@
 import Footer from "@/components/layout/Footer";
 import React, {ReactNode} from "react";
 import {BackgroundBeams} from "@/components/ui/background-beams";
-import PreviewPlayer from "@/pages/components/PreviewPlayer";
+import PreviewPlayer from "@/features/components/PreviewPlayer";
 
 const Layout = ({children}: { children: ReactNode }) => (
   <div>

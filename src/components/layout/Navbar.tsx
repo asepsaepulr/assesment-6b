@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import Login from "@/pages/Login";
-import Logout from "@/pages/Logout";
+import Login from "@/features/Login";
+import Logout from "@/features/Logout";
 import {useSession} from "next-auth/react";
 
 const NavbarMenu = () => {

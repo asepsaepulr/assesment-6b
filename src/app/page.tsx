@@ -1,5 +1,5 @@
 import React from "react";
-import ArtistPage from "@/pages/Artist";
+import ArtistPage from "@/features/Artist";
 
 export default async function Home() {
   return (
