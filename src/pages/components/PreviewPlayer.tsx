@@ -1,3 +1,5 @@
+"use client";
+
 import { usePlayer } from "@/context/PlayerContext";
 import Link from "next/link";
 import React from "react";
