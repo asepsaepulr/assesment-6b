@@ -171,7 +171,6 @@ export const Card = ({
   const {onCardClose} = useContext(CarouselContext);
 
   const router = useRouter();
-console.log("card", card)
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {

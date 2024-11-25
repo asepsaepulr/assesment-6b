@@ -44,16 +44,16 @@ export default function TracksTable({
   return (
     <div
       className="grid grid-cols-12 gap-4 p-4 mt-8 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 rounded-lg shadow-lg text-white relative">
-      <div className="col-span-1 font-semibold tracking-wider text-center uppercase text-gray-100">
+      <div className="col-span-1 text-center font-semibold tracking-wider uppercase">
         #
       </div>
-      <div className="col-span-9 text-sm font-medium tracking-wider text-left uppercase text-gray-200">
+      <div className="col-span-9 text-sm font-semibold tracking-wider text-left uppercase">
         Title
       </div>
-      <div className="col-span-1 text-sm font-medium tracking-wider text-center uppercase text-gray-200">
+      <div className="col-span-1 text-sm font-medium tracking-wider text-center uppercase">
         <IconClock/>
       </div>
-      <div className="col-span-1 text-sm font-medium tracking-wider text-center uppercase text-gray-200">
+      <div className="col-span-1 text-sm font-medium tracking-wider text-center uppercase">
       </div>
       <div className="col-span-12 my-3 border-b border-gray-300"></div>
 
@@ -65,8 +65,16 @@ export default function TracksTable({
             }`}
             key={track.id + index}
           >
-            <div className="col-span-1 text-center font-bold text-gray-100">
+            <div className="col-span-1 font-bold text-gray-100">
               {index + 1}
+              <button
+                onClick={() => track.preview_url && playTrack(track)}
+                className="btn-xl ml-3px bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600
+               text-white font-medium text-lg rounded-full shadow-sm transform transition duration-300
+               hover:scale-110 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-700
+               focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Play
+              </button>
             </div>
             <div className="col-span-9">
               <h2
@@ -79,7 +87,7 @@ export default function TracksTable({
               >
                 {track.name}
               </h2>
-                <div className="text-sm text-gray-200">
+              <div className="text-sm text-gray-200">
                   {track.artists.map((artist, i) => (
                     <span key={i}>
                   <span

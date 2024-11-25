@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import localFont from "next/font/local";
 import "../style/globals.css";
 import Layout from "@/components/layout/Layout";
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
@@ -38,21 +38,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
     <SessionWrapper>
-    <div className="items-center justify-items-center">
-      <main className="flex flex-col gap-8 p-3 row-start-2 items-center sm:items-start">
-        <PlayerProvider>
-        <SWRProvider>
-        <Layout>
-          <NavbarMenu/>
-          {children}
-        </Layout>
-        </SWRProvider>
-
-        </PlayerProvider>
-      </main>
-    </div>
+      <div className="items-center justify-items-center">
+        <main className="flex flex-col gap-8 p-3 row-start-2 items-center sm:items-start">
+          <PlayerProvider>
+            <SWRProvider>
+              <Layout>
+                <NavbarMenu/>
+                {children}
+              </Layout>
+            </SWRProvider>
+          </PlayerProvider>
+        </main>
+      </div>
     </SessionWrapper>
     </body>
     </html>
-);
+  );
 }

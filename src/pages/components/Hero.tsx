@@ -17,6 +17,12 @@ export default function Hero({album}: IProps) {
     router.push(`/album/${albumId}`);
   };
 
+  const formattedDate = new Date(Date.parse(album?.release_date || "")).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   return (
     <WobbleCard
       containerClassName="relative bg-blue-900 min-h-[500px] lg:min-h-[800px] xl:min-h-[300px] rounded-2xl overflow-hidden group"
@@ -46,18 +52,23 @@ export default function Hero({album}: IProps) {
               New Album Released
             </h2>
             <p className="mt-2 text-left text-sm md:text-base lg:text-lg text-neutral-200">
-              Coldplay latest album, Moon Music, released on October 4, 2024, <br/> represents a continuation of their experimental and heartfelt approach to music. <br/> The album features collaborations with various artists and includes singles <br/> like Feels Like Im Falling in Love and We Pray which showcase.
+              Coldplay latest album, {album?.name}, released on {formattedDate}, <br/> represents a continuation of their
+              experimental and heartfelt approach to music. <br/> The album features collaborations with various artists
+              and includes singles <br/> like Feels Like Im Falling in Love and We Pray which showcase.
             </p>
             <p className="mt-2 text-neutral-200 text-sm lg:text-base">
                 <span
-                  className="text-blue-400">{album?.artists[0].name}</span> • {album?.release_date}
+                  className="text-blue-400 font-semibold">{album?.artists[0].name}</span>
             </p>
           </div>
         </div>
         <div className="relative z-20">
           <button
             onClick={() => handleOpen(album?.id)}
-            className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base rounded-lg shadow-md transition duration-300 group-hover:backdrop-blur-sm">
+            className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600
+               text-white font-semibold text-base rounded-lg shadow-lg transform transition duration-300
+               hover:scale-105 hover:from-blue-500 hover:via-indigo-600 hover:to-blue-700
+               focus:outline-none focus:ring-4 focus:ring-blue-300">
             Listen Now
           </button>
         </div>

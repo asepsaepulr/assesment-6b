@@ -30,13 +30,6 @@ export default function PreviewPlayer() {
       }`}
     >
       <div className="flex items-center col-span-3 gap-4">
-        {currentTrack.album && (
-          <img
-            src={currentTrack.album.images?.[0].url}
-            alt={currentTrack.name}
-            className="w-16 h-16 rounded-lg shadow-md"
-          />
-        )}
         <div className="text-white">
           <h4 className="text-base font-semibold truncate">{currentTrack?.name}</h4>
           <Link href={`/artist/${currentTrack?.artists[0].id}`}>
