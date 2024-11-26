@@ -7,7 +7,7 @@ export const fetcher = async (url: string, accessToken: string) => {
     },
   });
   if (response.status === 401) {
-    return signIn("spotify", { callbackUrl: "http://localhost:3000" });
+    return signIn("spotify", { callbackUrl: "https://assesment-6b.vercel.app" });
   }
   if (!response.ok) {
 
