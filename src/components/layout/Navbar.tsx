@@ -54,7 +54,7 @@ const NavbarMenu = () => {
           <nav className="flex gap-6 text-2sm md:text-5sm font-semibold text-neutral-700 dark:text-white">
             <Link href="/" className="hover:text-blue-500">Home</Link>
             <Link href="/artist" className="hover:text-pink-500">Artist</Link>
-            <Link href="/album" className="hover:text-orange-500">Album</Link>
+            <Link href="/album/5SGtrmYbIo0Dsg4kJ4qjM6" className="hover:text-orange-500">Album</Link>
           </nav>
         </div>
         <div className="flex justify-center ">
