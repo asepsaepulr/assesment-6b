@@ -5,7 +5,7 @@ import {signIn} from "next-auth/react";
 
 export default function LoginButton() {
   const handleLogin = () => {
-    signIn("spotify", { callbackUrl: "/" });
+    signIn("spotify", { callbackUrl: "https://assesment-6b.vercel.app/api/auth/callback/spotify" });
   };
   return (
     <div>
