@@ -29,6 +29,10 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({token, account}) {
+      console.log(process.env.SPOTIFY_CLIENT_ID);
+      console.log(process.env.SPOTIFY_CLIENT_SECRET);
+      console.log(process.env.NEXTAUTH_SECRET);
+      console.log(process.env.NEXTAUTH_URL);
       if (account) {
         token.accessToken = account.access_token
         token.refreshToken = account.refresh_token
