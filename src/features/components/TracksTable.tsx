@@ -16,12 +16,14 @@ export default function TracksTable({
   tracks,
 }: IProps) {
 
+  console.log("Track", tracks)
+
   const { setCurrentTrack } = usePlayer();
 
   const playTrack = (track: Track) => {
-    if (track.preview_url) {
+
       setCurrentTrack(track);
-    }
+
   };
 
   const handleShare = async ({ trackUrl, trackTitle }: ShareButtonProps) => {
@@ -60,15 +62,13 @@ export default function TracksTable({
       <div className="w-full col-span-12">
         {tracks?.map((track, index) => (
           <div
-            className={`grid grid-cols-12 items-center py-3 px-4 hover:bg-indigo-600/40 rounded-lg transition ${
-              !track.preview_url ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
-            }`}
+            className="grid grid-cols-12 items-center py-3 px-4 hover:bg-indigo-600/40 rounded-lg transition cursor-pointer"
             key={track.id + index}
           >
             <div className="col-span-1 font-bold text-gray-100">
               {index + 1}
               <button
-                onClick={() => track.preview_url && playTrack(track)}
+                onClick={() => playTrack(track)}
                 className="btn-xl ml-3px bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600
                text-white font-medium text-lg rounded-full shadow-sm transform transition duration-300
                hover:scale-110 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-700
@@ -83,7 +83,7 @@ export default function TracksTable({
                     ? "cursor-pointer hover:underline"
                     : "text-gray-300"
                 }`}
-                onClick={() => track.preview_url && playTrack(track)}
+                onClick={() => playTrack(track)}
               >
                 {track.name}
               </h2>
